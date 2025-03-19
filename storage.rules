@@ -1,0 +1,22 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Function to check if the user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Chat images (enforce size limit of 400KB = 400 * 1024 bytes)
+    match /chat_images/{chatId}/{imageId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() 
+                    && request.resource.size <= 400 * 1024
+                    && request.resource.contentType.matches('image/.*');
+    }
+    
+    // Default rule - require authentication for all operations
+    match /{allPaths=**} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+} 

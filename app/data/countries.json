@@ -1,0 +1,52 @@
+[
+  {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  {
+    "city": "London",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  {
+    "city": "Paris",
+    "state": "Île-de-France",
+    "country": "France"
+  },
+  {
+    "city": "Tokyo",
+    "state": "Tokyo",
+    "country": "Japan"
+  },
+  {
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "country": "India"
+  },
+  {
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India"
+  },
+  {
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "country": "India"
+  },
+  {
+    "city": "Sydney",
+    "state": "New South Wales",
+    "country": "Australia"
+  },
+  {
+    "city": "Dubai",
+    "state": "Dubai",
+    "country": "United Arab Emirates"
+  },
+  {
+    "city": "Singapore",
+    "state": "Singapore",
+    "country": "Singapore"
+  }
+] 
