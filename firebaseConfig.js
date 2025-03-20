@@ -1,28 +1,42 @@
 // firebaseConfig.js
 import { initializeApp } from 'firebase/app';
-import { getAuth, initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import { Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // Import other Firebase modules as needed (e.g., firestore, storage)
 import { getFirestore, doc, updateDoc, addDoc, collection, serverTimestamp, increment } from 'firebase/firestore';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// Conditional imports and auth initialization
+let auth;
+
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCOmOnqVtEzA83EbuF6UhL5XGIanvdXF2w",
-  authDomain: "hhand-78382.firebaseapp.com",
-  projectId: "hhand-78382",
-  storageBucket: "hhand-78382.firebasestorage.app",
-  messagingSenderId: "195875358330",
-  appId: "1:195875358330:web:255a2a0e62c6091c25ddc3",
-  measurementId: "G-2QCDBTPJMN"
+  apiKey: "AIzaSyBICF1w7lGjvS4c6QF7mD_2Xe29t_Elx28",
+  authDomain: "helping-hands-49b2a.firebaseapp.com",
+  projectId: "helping-hands-49b2a",
+  storageBucket: "helping-hands-49b2a.appspot.com",
+  messagingSenderId: "315373518392",
+  appId: "1:315373518392:web:b2e9df8cf0814c7afdab4a",
+  measurementId: "G-NM3J9Q1SHJ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Auth with AsyncStorage persistence
-export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage)
-});
+// Initialize auth based on platform
+if (Platform.OS === 'web') {
+  // Web version
+  const { getAuth } = require('firebase/auth');
+  auth = getAuth(app);
+} else {
+  // Native version
+  const { initializeAuth, getReactNativePersistence } = require('firebase/auth');
+  auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(AsyncStorage)
+  });
+}
 
+// Export Firebase services
+export { auth };
 export const db = getFirestore(app);
 
 // ImgBB API Key - Replace with your actual API key
