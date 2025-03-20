@@ -11,10 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npx expo export
+      - name: Install dependencies
+        run: npm install # Or you can use 'npm ci' for a cleaner install if you have a package-lock.json
+      - name: Run npx expo export:web
+        run: npx expo export:web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HHAND_78382 }}
           channelId: live
           projectId: hhand-78382
+ 
