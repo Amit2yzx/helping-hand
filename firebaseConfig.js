@@ -10,13 +10,13 @@ let auth;
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBICF1w7lGjvS4c6QF7mD_2Xe29t_Elx28",
-  authDomain: "helping-hands-49b2a.firebaseapp.com",
-  projectId: "helping-hands-49b2a",
-  storageBucket: "helping-hands-49b2a.appspot.com",
-  messagingSenderId: "315373518392",
-  appId: "1:315373518392:web:b2e9df8cf0814c7afdab4a",
-  measurementId: "G-NM3J9Q1SHJ"
+  apiKey: "AIzaSyCOmOnqVtEzA83EbuF6UhL5XGIanvdXF2w",
+  authDomain: "hhand-78382.firebaseapp.com",
+  projectId: "hhand-78382",
+  storageBucket: "hhand-78382.firebasestorage.app",
+  messagingSenderId: "195875358330",
+  appId: "1:195875358330:web:255a2a0e62c6091c25ddc3",
+  measurementId: "G-2QCDBTPJMN"
 };
 
 // Initialize Firebase
